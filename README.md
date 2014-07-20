@@ -35,7 +35,7 @@ B: Climate
 C: IR
 D: Accelerometer
 
-Start the program with `tessel run tesselcopter.js`
+Start the program with `tessel run helicopter.js`
 
 
 ### How It Works
