@@ -7,7 +7,7 @@ This project allows control of an infrared-controlled toy helicopter via hand ge
 
 ### Modules Required
 
-- Accelerometer (x2)
+- Accelerometer
 - Climate
 - Infrared (IR)
 
@@ -30,12 +30,12 @@ This project allows control of an infrared-controlled toy helicopter via hand ge
 There are two distinct hardware parts to this operation: the Tessel (with modules) and the helicopter. The Tessel portion and related code is likely to be a fairly stable, plug-and-play operation if you're setting this up for the first time. The helicopter, on the other hand, may be more unreliable, as there's no guarantee that every model will use the same IR command codes.
 
 First, layout your Tessel in the following way:
-A: Acceleromter
-B: Climate
-C: IR
-D: Accelerometer
+- A: IR
+- B: Accelerometer
+- C: Climate
+- D: (none)
 
-Start the program with `tessel run tesselcopter.js`
+Start the program with `tessel run helicopter.js`
 
 
 ### How It Works
@@ -48,4 +48,4 @@ Because of the constraint on the complexity of number of command codes known for
 
 Humidity values move more gradually between values than accelerometer data, but have a tendency to creep slowly upwards and downwards with use and disuse, so we also set a threshold here. As a result, only a good waft of moist air of sharp cooling suck issues an actual command to the helicopter.
 
-Because the accelerometer modules are located off center relative to a "pilot" holding the Tessel in hand, we found that using two of them, one for "left" commands and one for "right," yielded the greatest accuracy.
+Because the accelerometer modules is located off center relative to a "pilot" holding the Tessel in hand, you may find that it's harder to turn one direction than the other. The code could be modified to use two accelerometers on opposite sides of the Tessel, but this adds another layer of complexity that we decided was undesirable.
